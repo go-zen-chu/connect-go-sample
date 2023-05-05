@@ -4,14 +4,16 @@ package greet.v1;
 
 option go_package = "github.com/go-zen-chu/connect-go-sample/gen/greet/v1;greetv1";
 
+// Path: /greet.v1.GreetService/Greet
+service GreetService {
+  // Greet する機能
+  rpc Greet(GreetRequest) returns (GreetResponse);
+}
+
 message GreetRequest {
   string name = 1;
 }
 
 message GreetResponse {
   string greeting = 1;
-}
-
-service GreetService {
-  rpc Greet(GreetRequest) returns (GreetResponse) {}
 }
