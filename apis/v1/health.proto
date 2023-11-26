@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package apis.v1;
+
+option go_package = "github.com/go-zen-chu/connect-go-sample/pkg/apis/v1;apisv1";
+
+service HealthService {
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {}
+
+message HealthResponse {
+  string status = 1;
+}

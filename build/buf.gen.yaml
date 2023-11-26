@@ -1,0 +1,11 @@
+version: v1
+plugins:
+  - plugin: doc
+    out: docs/apis
+    opt: markdown,index.md
+  - plugin: go
+    out: pkg
+    opt: paths=source_relative
+  - plugin: connect-go
+    out: pkg
+    opt: paths=source_relative

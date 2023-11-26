@@ -1,12 +1,10 @@
 syntax = "proto3";
 
-package greet.v1;
+package apis.v1;
 
-option go_package = "github.com/go-zen-chu/connect-go-sample/gen/greet/v1;greetv1";
+option go_package = "github.com/go-zen-chu/connect-go-sample/pkg/apis/v1;apisv1";
 
-// Path: /greet.v1.GreetService/Greet
 service GreetService {
-  // Greet する機能
   rpc Greet(GreetRequest) returns (GreetResponse);
 }
 

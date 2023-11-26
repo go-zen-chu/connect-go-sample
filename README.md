@@ -2,40 +2,18 @@
 
 Ref: [Getting started | Connect](https://connect.build/docs/go/getting-started/)
 
-Connect を利用すると、HTTPとgrpcサーバの両方ができる。
+You can create both http/grpc server using connect-go.
 
 ## install tools
 
 ```bash
-go install github.com/bufbuild/buf/cmd/buf@latest
-go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-go install github.com/bufbuild/connect-go/cmd/protoc-gen-connect-go@latest
-
-# not nessary when you only try http endpoint
-go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+make install-tools
 ```
 
-## create protobuf schema
+## add api
 
 ```bash
-touch ./greet/v1/greet.proto
+touch ./apis/v1/your_newapi.proto
 
-# use buf command to generate source code from schema
-buf mod init
-buf generate
+make all
 ```
-
-## generate docs
-
-```bash
-# install protoc command
-# mac
-brew install protobuf
-# install plugin
-go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
-protoc --doc_out=./docs --doc_opt=html,index.html **/*.proto
-```
-
-Set GitHub pages.
-
-![](github-pages.png)
